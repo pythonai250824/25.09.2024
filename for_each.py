@@ -1,22 +1,8 @@
-# []
-# append
-# insert
-# len
-# min max mean
-# pop
+
+import random
 import statistics
 
-# sum, for-each, remove, del, for-each, extend, comprehension, any, all
-
-# sum the numbers between 1-50
-numbers: list[int] = []
-for i in range(1, 50 + 1):
-    numbers.append(i)
-# dont use sum as a variable
-sum_list: int = sum(numbers)
-avg_list: float = sum(numbers) / len(numbers)  # better mean
-print('sum_list', sum_list)
-print('avg_list', avg_list)
+# for-each
 
 # print every height above avg
 height_list: list[float] = [1.90, 2.25, 2.1, 1.8, 1.55, 1.99, 2.3]
@@ -34,6 +20,8 @@ for height in height_list:  # [1.9, 2.25, 2.1, 1.8, 1.55, 1.99, 2.3]
     if height > avg_heights:
         print(f"{height}", end=" ")
 print()
+
+# print each letter in a word
 print(f"for-each letter in 'Hello' --> ", end="")
 for letter in "Hello":  # str ['H', 'e', 'l', 'l', 'o']
     print(letter, end="  ")
@@ -42,7 +30,26 @@ print()
 # create a list of 20 random numbers between -50 and +50
 # print the list
 # print all positive numbers using for-each
+random_list: list[int] = []
+for _ in range(20):
+    random_number: int = random.randint(-50, +50)
+    random_list.append(random_number)
+
+print(random_list)
+
+print(f"for-each positive numbers: ", end="")
+for number in random_list:
+    if number > 0:
+        print(number, end =" ")
+print()
+
 # input str from the user i.e. chocolate
 # input a letter str i.e. c
 # count how many times the letter appears in the word?
-
+word: str = input('enter a word: ')
+char: str = input('enter a character: ')
+char_counter: int = 0
+for letter in word:
+    if letter == char:
+        char_counter += 1
+print(f"in '{word}' the character '{char}' repeats {char_counter} times.")
