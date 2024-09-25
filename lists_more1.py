@@ -81,13 +81,74 @@ while 99 in list1:
     list1.remove(99)
 print('after list1.remove all', list1)
 
-# input names from the user and append to the list
-# if a name was entered twice then continue
+# input names from the user and append to a list
+# if the name already exist in the list then do NOT append (continue)
 # if the given name was 'exit' then ==> break
+list_names = []
+while True:
+    name: str = input('whats your name?')
+    if name == 'exit':
+        break
+    if name in list_names:
+        print(f"we already have a {name}")
+        continue
+    list_names.append(name)
+print(list_names)
 
+# clear
+list1.clear()  # clears the specific list
+list1 = []   # creates a new empty list
+print('after clear', list1)
 
+# index
+list1 = [1, 20, 30, 99, -1]
+if 99 in list1:
+    #                                        0   1   2   3   4
+    print('[1, 20, 30, 99, -1].index(99):', [1, 20, 30, 99, -1].index(99))
+    print('[1, 20, 30, 99, -1].index(99):', list1.index(99))
 
+# count
+print('[1, 20, 30, 99, -1,99].count(99):', [1, 20, 30, 99, -1, 99].count(99))
 
+# copy
+"""
+>>> l1 = [1,2,3]
+>>> save_list = l1  # did NOT really save the original
+>>> l1.extend([4,5,6])
+>>> save_list
+[1, 2, 3, 4, 5, 6]     # save_list is the same as l1, alias
 
+>>> l1 = [1,2,3]
+>>> save_list = l1.copy()     # save_list is a new independent list
+>>> l1.extend([4,5,6])
+>>> l1
+[1, 2, 3, 4, 5, 6]
+>>> save_list
+[1, 2, 3]
+
+>>> x = 1
+>>> y = x  # copy a new value 
+>>> x += 1
+>>> x
+2
+>>> y
+1
+"""
+
+list1 = [1, 5, -2, 100, -30, 11, 0]
+print('before sort', list1)
+save_list1 = list1.copy()
+list1.sort()
+print('after sort', list1)
+print('after sort, save list1', save_list1)
+# sort reverse
+list1.sort(reverse=True) # sort from big to small, in reverse order
+print('list1.sort(reverse=True)', list1)
+
+#        d        m        z       a
+list1= ['danny', 'moshe', 'zina', 'avi']
+print(list1)
+list1.sort()
+print('list1.sort() by abc', list1)
 
 
